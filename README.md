@@ -7,7 +7,7 @@
 # Running the Project
 
 - Install dependencies:
-    * npm instal
+    * npm install
 
 
 - Start development server:
