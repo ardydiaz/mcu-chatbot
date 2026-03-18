@@ -12,22 +12,68 @@
 body{
   background: linear-gradient(#F4F0FF, #DACDFF);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
 }
+
+#chatbot-toggler{
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #28003E;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+#chatbot-toggler span{
+  position: absolute;
+  color: #fff;
+}
+
+.container.show-chatbot #chatbot-toggler{
+  transform: rotate(90deg);
+}
+
+#chatbot-toggler span:last-child,
+.container.show-chatbot #chatbot-toggler span:first-child{
+  opacity: 0;
+}
+
+.container.show-chatbot #chatbot-toggler span:last-child{
+  opacity: 1;
+}
+
 .chatbot-popup{
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
   width: 420px;
+  bottom: 90px;
+  right: 35px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  position: relative;
+  transition: scale(0.2);
+  transform-origin: bottom right;
+  transition: all 0.1s ease;
+
+}
+
+.container.show-chatbot .chatbot-popup{
+  opacity: 1;
+  pointer-events: auto;
+  transition: scale(1);
 }
 
 .chatbot-popup .chat-header{
-  background: #6d4fc2;
+  background: #28003E;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,10 +89,10 @@ body{
 .header-info svg{
   width: 35px;
   height: 35px;
-  background: #fff;
+  background: #FEC033;
   padding: 6px;
   border-radius: 50%;
-  fill: #6d4fc2;
+  fill: #29003F;
   flex-shrink: 0;
 }
 
@@ -98,10 +144,10 @@ body{
   height: 35px;
   padding: 6px;
   border-radius: 50%;
-  fill: #fff;
+  fill: #29003F;
   align-self: flex-end;
   margin-bottom: 2px;
-  background: #6d4fc2;
+  background: #FEC033;
   flex-shrink: 0;
 }
 
@@ -124,7 +170,7 @@ body{
 }
 
 .chat-body .user-message .message-text{
-  background: #6d4fc2;
+  background: #4F2971;
   border-radius: 13px 13px 3px 13px;
   color: #fff;
 }
