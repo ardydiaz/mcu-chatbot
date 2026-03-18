@@ -1,17 +1,17 @@
 # Environment Variables
 
 Create a .env file in the root of your project and add:
-**VITE_GEMINI_API_KEY=**
-**VITE_GEMINI_URL=**
+*VITE_GEMINI_API_KEY=
+*VITE_GEMINI_URL=
 
 # Running the Project
 
 - Install dependencies:
-  **npm install**
+    * npm instal
 
 
 - Start development server:
- **npm run dev**
+   * npm run dev**
 
 
 # ⚠️ API Rate Limits
